@@ -1,0 +1,44 @@
+button {
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+img {
+  height: 200px;
+}
+
+input {
+  position: relative;
+  height: 30px;
+  left: 4%;
+}
+
+label {
+  font-size: 16px;
+}
+
+.fontButton {
+  font-size: 14px;
+}
+
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
+#centerContentContainer {
+  display: flex;
+  width: 80vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+#centerContentContainerNoGap {
+  display: flex;
+  width: 80vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

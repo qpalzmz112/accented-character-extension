@@ -1,0 +1,13 @@
+{
+  "name": "Spanish Characters Extension",
+  "description": "Convenient way to copy and paste characters that aren't present on English keyboards.",
+  "version": "1.3",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "permissions": ["storage"]
+}

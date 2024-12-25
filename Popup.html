@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="fontSize.css" />
+<body>
+  <div id="centerContentContainer">
+    <label for="fontSizeInput"> Font size: </label>
+    <input type="number" id="fontSizeInput" min="2" max="64" value="12" />
+    <br />
+
+    <button class="copyOnClick">&aacute;</button>
+    <button class="copyOnClick">&eacute;</button>
+    <button class="copyOnClick">&iacute;</button>
+    <button class="copyOnClick">&ntilde;</button>
+    <button class="copyOnClick">&oacute;</button>
+    <button class="copyOnClick">&uacute;</button>
+    <button class="copyOnClick">&iquest;</button>
+    <button class="copyOnClick">&iexcl;</button>
+
+    <div id="centerContentContainerNoGap">
+      <label for="fontInput"> Fonts: </label>
+      <form id="fontInput">
+        <label for="Arial" class="fontButton"> Arial </label>
+        <input type="radio" id="Arial" name="fonts" value="Arial" />
+        <label for="Times New Roman" class="fontButton">
+          Times New Roman
+        </label>
+        <input
+          type="radio"
+          id="Times New Roman"
+          name="fonts"
+          value="Times New Roman"
+        />
+      </form>
+    </div>
+
+    <img src="kirby-headphones.gif" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
