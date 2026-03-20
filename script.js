@@ -6,12 +6,20 @@ Font size selector
 let fontInput = document.getElementById("fontSizeInput");
 function updateFontSize(event) {
   let size = fontInput.value;
+
+  // fixes the cases such as: size = 1, key = 4, so the view says 14 but size is updated before the key press updates fontInput.value
+  if (!isNaN(event.key)) {
+    size += event.key;
+  } else {
+    return;
+  }
+
   for (i = 0; i < document.getElementsByTagName(textElement).length; i++) {
     document.getElementsByTagName(textElement)[i].style.fontSize =
       1.333333 * size + "px";
   }
   chrome.storage.local.set({ fontSize: fontInput.value }, () =>
-    console.log("font size successfully saved")
+    console.log("font size successfully saved"),
   );
 }
 fontInput.addEventListener("keydown", updateFontSize);
@@ -31,7 +39,7 @@ function updateFont(font) {
     document.getElementsByTagName(textElement)[i].style.fontFamily = font;
   }
   chrome.storage.local.set({ font: font }, () =>
-    console.log("font successfully saved")
+    console.log("font successfully saved"),
   );
 }
 
