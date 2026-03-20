@@ -18,8 +18,8 @@ function updateFontSize(event) {
     document.getElementsByTagName(textElement)[i].style.fontSize =
       1.333333 * size + "px";
   }
-  chrome.storage.local.set({ fontSize: fontInput.value }, () =>
-    console.log("font size successfully saved"),
+  chrome.storage.local.set({ fontSize: size }, () =>
+    console.log("font size successfully saved: " + size),
   );
 }
 fontInput.addEventListener("keydown", updateFontSize);
@@ -61,6 +61,7 @@ chrome.storage.local.get(["fontSize"], function (s) {
     fontInput.value = 12;
     console.log("default font size applied");
   } else {
+    console.log("loaded font size: " + s.fontSize);
     for (i = 0; i < document.getElementsByTagName(textElement).length; i++) {
       fontInput.value = s.fontSize;
       document.getElementsByTagName(textElement)[i].style.fontSize =
