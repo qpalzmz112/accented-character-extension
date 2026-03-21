@@ -10,14 +10,14 @@ function updateFontSize(event) {
   // fixes the cases such as: size = 1, key = 4, so the view says 14 but size is updated before the key press updates fontInput.value
   if (!isNaN(event.key)) {
     size += event.key;
-  } else {
+  } else if (event.button != 0) {
     return;
   }
 
-  for (i = 0; i < document.getElementsByTagName(textElement).length; i++) {
+  /* for (i = 0; i < document.getElementsByTagName(textElement).length; i++) {
     document.getElementsByTagName(textElement)[i].style.fontSize =
       1.333333 * size + "px";
-  }
+  } */
   chrome.storage.local.set({ fontSize: size }, () =>
     console.log("font size successfully saved: " + size),
   );
@@ -65,7 +65,8 @@ chrome.storage.local.get(["fontSize"], function (s) {
     for (i = 0; i < document.getElementsByTagName(textElement).length; i++) {
       fontInput.value = s.fontSize;
       document.getElementsByTagName(textElement)[i].style.fontSize =
-        1.33333 * fontInput.value + "px";
+        // 1.33333 * fontInput.value + "px";
+        "16px";
     }
     console.log("font size successfully loaded");
   }
